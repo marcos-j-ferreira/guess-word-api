@@ -12,13 +12,16 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @WebMvcTest(TestController.class)
 public class TestControllerTest {
 
+    private String URL_TESTE = "/api/v1/words";
+    // endpoit: http://localhost:8080/api/v1/words
+
     @Autowired
     private MockMvc mockMvc;
 
     @Test
     void testHelloEndpoint() throws Exception {
-        mockMvc.perform(get("api/v1/words"))
+        mockMvc.perform(get("/api/v1/words"))
                 .andExpect(status().isOk())
-                .andExpect(content().string("Hello, World!"));
+                .andExpect(content().string("Hello, World!!"));
     }
 }
