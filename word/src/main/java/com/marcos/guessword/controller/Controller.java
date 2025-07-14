@@ -32,7 +32,6 @@ public class Controller {
         return ResponseEntity
                 .status(200)
                 .body(new HelloResponseDTO(hello));
-
     }
 
     // Esta foi feita com o objetivo de ser didática, servindo como material para estudo.
@@ -42,6 +41,9 @@ public class Controller {
         System.out.println(name.name());
         UsuarioResponseDTO response = new UsuarioResponseDTO(name.name(), reponse);
 
-        return ResponseEntity.ok(response);
+        return ResponseEntity
+                .status(201)
+                .body(response);
+        //(response);
     }
 }
