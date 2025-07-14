@@ -1,0 +1,21 @@
+# Maven
+target/
+pom.xml.versionsBackup
+
+# IDEs
+.idea/
+*.iml
+.classpath
+.project
+.settings/
+.vscode/
+
+# Sistemas operacionais
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Env
+.env
