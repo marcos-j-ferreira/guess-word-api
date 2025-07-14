@@ -17,25 +17,30 @@ import org.springframework.web.bind.annotation.RequestBody;
 import com.marcos.guessword.dto.request.UsuarioRequestDTO;
 import com.marcos.guessword.dto.response.UsuarioResponseDTO;
 
+import com.marcos.guessword.dto.response.HelloResponseDTO;
+
 @RestController
 @RequestMapping("/api/v1/words")
 public class Controller {
     //private ServiceUser serUser = new ServiceUser();
 
+    // Esta foi feita com o objetivo de ser didática, servindo como material para estudo.
     @GetMapping
-    public ResponseEntity<String> hello(){
+    public ResponseEntity<HelloResponseDTO> hello(){
         String hello = "Hello, World!!";
 
         return ResponseEntity
                 .status(200)
-                .body(hello);
+                .body(new HelloResponseDTO(hello));
 
     }
 
+    // Esta foi feita com o objetivo de ser didática, servindo como material para estudo.
     @PostMapping("/user")
     public ResponseEntity<UsuarioResponseDTO> user(@RequestBody (required=true) UsuarioRequestDTO name){
         String reponse = "adicionado";
-        UsuarioResponseDTO response = new UsuarioResponseDTO("marcos", "foi");
+        System.out.println(name.name());
+        UsuarioResponseDTO response = new UsuarioResponseDTO(name.name(), reponse);
 
         return ResponseEntity.ok(response);
     }

@@ -6,7 +6,15 @@ URL_BASE="http://localhost:8080/api/v1/words"
 
 # -----------------------------
 # Método <GET>: Verificar se a API está rodando
+# Esta foi feita com o objetivo de ser didática, servindo como material para estudo.
 # -----------------------------
+
+function print(){
+    echo -e " ========================================================="
+}
+
+# -- Limpar terminal
+clear 
 
 echo "Fazendo requisição GET para $URL_BASE..."
 curl -i "$URL_BASE"   # -i inclui o status da resposta HTTP
@@ -17,10 +25,13 @@ echo -e "\n"           # nova linha para separar as saídas
 
 # -----------------------------
 # Método <POST>: Enviar um nome e receber uma resposta
+# Esta foi feita com o objetivo de ser didática, servindo como material para estudo.
 # -----------------------------
+print
+echo -e "\n"
 
 POST_URL="$URL_BASE/user"
-NOME="marcos"
+NOME="Luiz"
 
 echo "Fazendo requisição POST para $POST_URL com nome='$NOME'..."
 curl -i -X POST "$POST_URL" \

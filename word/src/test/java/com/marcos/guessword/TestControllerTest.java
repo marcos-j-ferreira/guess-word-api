@@ -9,7 +9,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-@WebMvcTest(TestController.class)
+@WebMvcTest(Controller.class)
 public class TestControllerTest {
 
     private String URL_TESTE = "/api/v1/words";
