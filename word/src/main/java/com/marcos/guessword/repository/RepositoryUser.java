@@ -1,21 +1,21 @@
-// package com.marcos.guessword.repository;
+package com.marcos.guessword.repository;
 
-// import java.util.ArrayList;
-// import java.util.List;
+import java.util.ArrayList;
+import java.util.List;
 
-// import com.marcos.guessword.model.Usuario;
+import com.marcos.guessword.model.Usuario;
 
-// public class RepositoryUser {
+public class RepositoryUser {
 
-//     private ArrayList<Usuario> user = new ArrayList<>();
+    private ArrayList<Usuario> user = new ArrayList<>();
 
-//     public final boolean add(String name){
-//         user.add(name);
-//         return true;
-//     } 
+    public final boolean add(Usuario name){
+        user.add(name);
+        return true;
+    } 
 
-//     public final List<Usuario> getusers(){
-//         return new ArrayList<>(user);
-//     }
+    public final List<Usuario> getusers(){
+        return new ArrayList<>(user);
+    }
 
-// }
+}

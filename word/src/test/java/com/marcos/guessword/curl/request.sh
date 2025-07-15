@@ -42,3 +42,8 @@ echo -e "\n"
 # Esperado: Alguma resposta com base no nome enviado
 # <status> 201 Created ou similar
 
+
+
+# Proxima rota: 
+#/user?user=marcosJuniorLeme
+#Envia um nome, e recebe uma resposta

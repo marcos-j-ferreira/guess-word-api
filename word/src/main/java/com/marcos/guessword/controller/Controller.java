@@ -10,19 +10,21 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
+//RequestParam
 
 
-//import com.marcos.guessword.service.ServiceUser;
+import com.marcos.guessword.service.ServiceUser;
 //import com.marcos.guessword.model.Usuario;
 import com.marcos.guessword.dto.request.UsuarioRequestDTO;
 import com.marcos.guessword.dto.response.UsuarioResponseDTO;
-
 import com.marcos.guessword.dto.response.HelloResponseDTO;
+import com.marcos.guessword.model.Usuario;
 
 @RestController
 @RequestMapping("/api/v1/words")
 public class Controller {
-    //private ServiceUser serUser = new ServiceUser();
+    private ServiceUser service = new ServiceUser();
 
     // Esta foi feita com o objetivo de ser didática, servindo como material para estudo.
     @GetMapping
@@ -45,5 +47,21 @@ public class Controller {
                 .status(201)
                 .body(response);
         //(response);
+    }
+
+    @GetMapping("/user")
+    public ResponseEntity<UsuarioResponseDTO> adduser(@RequestParam (required=true) UsuarioRequestDTO user){
+        //service.adduser(user.name());
+        
+        String nome = service.adduser(user);
+
+        UsuarioResponseDTO response = new UsuarioResponseDTO(nome, "usuário adiconado com sucesso");
+
+        System.out.println(user.name());
+
+        return ResponseEntity
+                .status(201)
+                .body(response);
+
     }
 }

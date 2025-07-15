@@ -1,15 +1,17 @@
-// package com.marcos.guessword.service;
+package com.marcos.guessword.service;
 
-// import com.marcos.guessword.dto.request.UsuarioRequestDTO;
-// import com.marcos.guessword.repository.RepositoryUser;
-// import com.marcos.guessword.model.Usuario;
+import com.marcos.guessword.dto.request.UsuarioRequestDTO;
+import com.marcos.guessword.repository.RepositoryUser;
+import com.marcos.guessword.model.Usuario;
 
-// public class ServiceUser {
+public class ServiceUser {
 
-//     private RepositoryUser repor = new RepositoryUser();
+    private RepositoryUser repository = new RepositoryUser();
 
-//     public final Usuario adduser( UsuarioRequestDTO name){
-//         repo.add(name);
-//         return "Usuario adicionado com sucesso";
-//     } 
-// }
+    public final String adduser( UsuarioRequestDTO name){
+        Usuario user = new Usuario(name.name());
+        repository.add(user);
+
+        return name.name();
+    } 
+}

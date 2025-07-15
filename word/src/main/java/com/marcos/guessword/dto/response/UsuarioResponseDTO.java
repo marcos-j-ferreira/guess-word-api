@@ -1,5 +1,5 @@
 package com.marcos.guessword.dto.response;
 
 
-public record UsuarioResponseDTO(String name, String response){}
+public record UsuarioResponseDTO(String nome, String status){}
 
