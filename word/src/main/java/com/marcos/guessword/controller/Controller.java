@@ -118,5 +118,17 @@ public class Controller {
                 .status(200)
                 .body(response);
     }
+
+    // retorna um json com regex, importante não esquecer o header
+    @GetMapping("/json/regex")
+    public ResponseEntity<String> regexx(){
+
+        String body = "{\"Alunos\": {\"name\":\"Luiz\"},{\"name\":\"Marcos\"},{\"name\":\"Ana\"},{\"name\":\"Ferreira\"} }";
+
+        return ResponseEntity
+                .status(200)
+                .header("Content-Type", "application/json") // importante 
+                .body(body);
+    }
 }
 
